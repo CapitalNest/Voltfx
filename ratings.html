@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voltfx.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #111;
+    }
+
+    .rating-summary {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .average-score {
+      font-size: 60px;
+      font-weight: 700;
+      color: #f4b400;
+      text-align: center;
+    }
+
+    .rating-bars {
+      flex: 1;
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .bar-label {
+      width: 70px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .bar-fill {
+      flex: 1;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 14px;
+      margin: 0 10px;
+      position: relative;
+    }
+
+    .bar-fill-inner {
+      background: #f4b400;
+      height: 100%;
+      transition: width 1s ease-in-out;
+    }
+
+    .bar-count {
+      width: 40px;
+      text-align: right;
+      color: #666;
+    }
+
+    .comment-section {
+      margin-top: 50px;
+    }
+
+    .comment {
+      background: #f9f9f9;
+      border-left: 5px solid #f4b400;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .comment.visible {
+      display: block;
+    }
+
+    .comment h4 {
+      margin: 0 0 5px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .comment p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .comment span {
+      display: inline-block;
+      margin-left: 10px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .add-comment {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .add-comment button {
+      padding: 10px 25px;
+      background: #f4b400;
+      border: none;
+      color: #111;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .alert {
+      display: none;
+      background: #ffe9e9;
+      color: #c00;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border: 1px solid #c00;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .show-more {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .show-more button {
+      background: #ddd;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .rating-summary {
+        flex-direction: column;
+        align-items: center;
+      }
+      .average-score {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Ratings & Reviews</h1>
+
+  <div class="rating-summary">
+    <div class="average-score">4.3</div>
+    <div class="rating-bars">
+      <div class="bar"><div class="bar-label">5 stars</div><div class="bar-fill"><div class="bar-fill-inner" style="width: 55%"></div></div><div class="bar-count">1252</div></div>
+      <div class="bar"><div class="bar-label">4 stars</div><div class="bar-fill"><div class="bar-fill-inner" style="width: 27%"></div></div><div class="bar-count">612</div></div>
+      <div class="bar"><div class="bar-label">3 stars</div><div class="bar-fill"><div class="bar-fill-inner" style="width: 18%"></div></div><div class="bar-count">426</div></div>
+      <div class="bar"><div class="bar-label">2 stars</div><div class="bar-fill"><div class="bar-fill-inner" style="width: 12%"></div></div><div class="bar-count">259</div></div>
+      <div class="bar"><div class="bar-label">1 star</div><div class="bar-fill"><div class="bar-fill-inner" style="width: 5%"></div></div><div class="bar-count">94</div></div>
+    </div>
+  </div>
+
+  <div class="comment-section">
+    <h2>Comments (38)</h2>
+
+    <!-- Example comments (5 visible by default, 33 hidden) -->
+    <div class="comment visible"><h4>johndoe88@gmail.com</h4><p>Absolutely love this app! Works flawlessly.<span>4 days</span></p></div>
+    <div class="comment visible"><h4>sarah.miles32@gmail.com</h4><p>Slow payouts but cool!<span>2 weeks ago</span></p></div>
+    <div class="comment visible"><h4>davidsmith01@gmail.com</h4><p>Definitely the best in the market. Keep it up!<span>2 weeks</span></p></div>
+    <div class="comment visible"><h4>adewale_bright@gmail.com</h4><p>Very reliable platform. I got paid quickly.<span>2 weeks</span></p></div>
+    <div class="comment visible"><h4>lucyjane23@gmail.com</h4><p>I can't reset my password. please how can i do that<span>3 days</span></p></div>
+
+    <!-- 33 hidden comments -->
+    <div class="comment"><h4>emma.johns25@gmail.com</h4><p>Legit service, would recommend to anyone.<span>2 month</span></p></div>
+    <div class="comment"><h4>qingwen88@gmail.com</h4><p>非常棒的服务，快速到账，强烈推荐！<span>2 weeks</span></p></div>
+    <div class="comment"><h4>fatima.kano@gmail.com</h4><p>They delivered exactly as promised. Good work!<span>2 weeks ago</span></p></div>
+    <div class="comment"><h4>chen.liu@gmail.com</h4><p>用户界面很友好，使用起来很方便。<span>4 weeks</span></p></div>
+    <div class="comment"><h4>greg.thomas92@gmail.com</h4><p>Cool but the withdrawal is a little bit slow. 3 stars<span>6 days</span></p></div>
+    <div class="comment"><h4>zhao.huang@gmail.com</h4><p>支持中文，很棒的体验！<span>2 weeks ago</span></p></div>
+    <div class="comment"><h4>mary.johnson10@gmail.com</h4><p>I refer all my friends to this site.<span>2 weeks</span></p></div>
+    <div class="comment"><h4>uche.nwankwo@gmail.com</h4><p>Good service, though the UI can improve a bit.<span>6 days</span></p></div>
+    <div class="comment"><h4>peter.lee23@gmail.com</h4><p>poor customer care support!<span>2 weeks ago</span></p></div>
+    <div class="comment"><h4>alice.baker88@gmail.com</h4><p>Payment is always fast. Zero complaints.<span>4 days</span></p></div>
+
+    <div class="show-more">
+      <button onclick="showMoreComments()">Show More Comments</button>
+    </div>
+  </div>
+
+  <div class="add-comment">
+    <button onclick="showAlert()">Rate or Comment</button>
+    <div class="alert" id="alertBox">Please register or login to rate or comment.</div>
+  </div>
+</div>
+
+<script>
+  function showAlert() {
+    const alertBox = document.getElementById("alertBox");
+    alertBox.style.display = "block";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, 3000);
+  }
+
+  function showMoreComments() {
+    const hiddenComments = document.querySelectorAll('.comment:not(.visible)');
+    hiddenComments.forEach(comment => {
+      comment.classList.add('visible');
+    });
+    document.querySelector('.show-more').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
